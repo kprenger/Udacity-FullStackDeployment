@@ -4,6 +4,12 @@
 
 This project is part of the Udacity Full Stack JavaScript Developer Nanodegree. The intent was to integrate my Frontend and Backend applications into a single CI/CD pipeline. I achieved this by adding my [Frontend repo](https://github.com/kprenger/Udacity-MyStore) and [Backend repo](https://github.com/kprenger/Udacity-StorefrontBackend) as git submodules to this Deployment repo. I then created a root package.json with scripts to call the various scripts in the submodules. This is all orchestrated via the .circleci/config.yml.
 
+If you aren't familiar with git submodules and are cloning this locally, the steps to get _all_ of the files are below:
+1. `git clone git@github.com:kprenger/Udacity-FullStackDeployment.git`
+2. `cd Udacity-FullStackDeployment`
+3. `git submodule sync --recursive`
+4. `git submodule update --recursive --init`
+
 More information about my project (including required screenshots) can be found in the docs folder:
 * [Application Dependencies](docs/ApplicationDependencies.md)
 * [Infrastructure](docs/Infrastructure.md)
@@ -13,4 +19,4 @@ Specifics about the Frontend and Backend projects can be found in the READMEs of
 
 My [running web app](http://kurtawsbucket-20230215.s3-website.us-east-2.amazonaws.com/) will be active until after the instructor review is complete. After which, I will shut it down for cost savings purposes. A screenshot of the home page is below.
 
-![Application Home Page](screenshots/ApplicationHomePage.png)
+![Application Home Page](screenshots/ApplicationHomePage.png?raw=true)

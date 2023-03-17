@@ -8,11 +8,13 @@ jobs:
     executor: node/default
     steps:
       - checkout
+      # Since my project uses submodules, I need to ensure those submoduls are pulled down as well.
       - run:
           name: Checkout Submodules
           command: |
             git submodule sync --recursive
             git submodule update --recursive --init
+      # Install Frontend / Backend dependencies
       - run:
           name: Install Frontend Dependencies
           command: |
@@ -21,6 +23,7 @@ jobs:
           name: Install Backend Dependencies
           command: |
             npm run backend:install
+      # Lint Frontend / Backend
       - run:
           name: Lint Frontend
           command: |
@@ -29,6 +32,7 @@ jobs:
           name: Lint Backend
           command: |
             npm run backend:lint
+      # Build Frontend / Backend
       - run:
           name: Build Frontend
           command: |
@@ -41,19 +45,23 @@ jobs:
     executor: node/default
     steps:
       - checkout
+      # Since my project uses submodules, I need to ensure those submoduls are pulled down as well.
       - run:
           name: Checkout Submodules
           command: |
             git submodule sync --recursive
             git submodule update --recursive --init
+      # Setup AWS CLI and EB CLI for deploy steps
       - aws-cli/setup
       - eb/setup
+      # Deploy Frontend - install dependencies, build, and deploy
       - run:
           name: Deploy Frontend
           command: |
             npm run frontend:install
             npm run frontend:build
             npm run frontend:deploy
+      # Deploy Backend - install dependencies, build, and deploy
       - run:
           name: Deploy Backend
           command: |
