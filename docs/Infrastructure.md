@@ -1,9 +1,5 @@
 # Infrastructure
 
-An overall architecture of the application can be seen below.
-
-![Architecture](../screenshots/Architecture.png)
-
 ## Frontend
 
 The Frontend is hosted as a static website in [Amazon S3](https://aws.amazon.com/s3/).

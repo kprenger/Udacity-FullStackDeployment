@@ -1,5 +1,7 @@
 # Udacity-FullStackDeployment
 
+[![kprenger](https://circleci.com/gh/kprenger/Udacity-FullStackDeployment.svg?style=shield)](https://app.circleci.com/pipelines/github/kprenger/Udacity-FullStackDeployment)
+
 This project is part of the Udacity Full Stack JavaScript Developer Nanodegree. The intent was to integrate my Frontend and Backend applications into a single CI/CD pipeline. I achieved this by adding my [Frontend repo](https://github.com/kprenger/Udacity-MyStore) and [Backend repo](https://github.com/kprenger/Udacity-StorefrontBackend) as git submodules to this Deployment repo. I then created a root package.json with scripts to call the various scripts in the submodules. This is all orchestrated via the .circleci/config.yml.
 
 More information about my project (including required screenshots) can be found in the docs folder:
