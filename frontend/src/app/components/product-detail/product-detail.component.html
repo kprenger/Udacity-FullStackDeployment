@@ -1,0 +1,25 @@
+<div *ngIf="product.id < 0">
+  <h1>Your item details were not found.</h1>
+</div>
+<div *ngIf="product.id >= 0" class="detail-container">
+  <img class="product-image" src="{{ product.url }}" alt="{{ product.name }}" />
+  <div class="detail-item">
+    <h1>{{ product.name }}</h1>
+    <h3>{{ product.price }}</h3>
+    <h4>{{ product.description }}</h4>
+
+    <form (ngSubmit)="addToCart()">
+      <select class="select-input" name="quantity" [(ngModel)]="quantity">
+        <option
+          *ngFor="let val of [0, 1, 2, 3, 4, 5, 6, 7, 8]"
+          value="{{ val }}"
+        >
+          {{ val }}
+        </option></select
+      >&nbsp;&nbsp;
+      <button type="submit" [disabled]="quantity == '0'">Add to Cart</button>
+    </form>
+    <br />
+    <a routerLink="/" class="back-link">Back to Product List</a>
+  </div>
+</div>

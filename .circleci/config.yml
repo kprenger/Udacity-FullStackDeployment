@@ -8,12 +8,6 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      # Since my project uses submodules, I need to ensure those submoduls are pulled down as well.
-      - run:
-          name: Checkout Submodules
-          command: |
-            git submodule sync --recursive
-            git submodule update --recursive --init
       # Install Frontend / Backend dependencies
       - run:
           name: Install Frontend Dependencies
@@ -45,12 +39,6 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      # Since my project uses submodules, I need to ensure those submoduls are pulled down as well.
-      - run:
-          name: Checkout Submodules
-          command: |
-            git submodule sync --recursive
-            git submodule update --recursive --init
       # Setup AWS CLI and EB CLI for deploy steps
       - aws-cli/setup
       - eb/setup

@@ -1,6 +1,0 @@
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/kprenger/Udacity-MyStore
-[submodule "backend"]
-	path = backend
-	url = https://github.com/kprenger/Udacity-StorefrontBackend
